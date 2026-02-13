@@ -1,7 +1,7 @@
-import Image from "next/image";
 import HeroSection from "@/components/landingpage/hero";
 import About from "@/components/landingpage/about";
 import Help from "@/components/landingpage/help";
+import CallToAction from "@/components/landingpage/cta";
 
 export default function Home() {
   return (
@@ -10,6 +10,7 @@ export default function Home() {
         <HeroSection />
         <About />
         <Help />
+        <CallToAction />
       </main>
     </div>
   );

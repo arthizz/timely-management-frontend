@@ -6,12 +6,12 @@ export default function Help(){
 
     return (
 
-        <div className="bg-gray-300 w-full py-16 px-16 mx-auto">
+        <div className="bg-gray-200 w-full py-16 px-16 mx-auto">
             <div className="text-center mb-5">
                 <h2 className="text-blue-950 text-5xl font-bold">How We Help You Scale</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 py-16 px-16 gap-4">
-                <div className="pt-5 pb-16 px-5 inset-shadow-sm shadow-lg">
+            <div className="grid grid-cols-1 sm:grid-cols-3 py-16 px-16 gap-5">
+                <div className="pt-5 pb-16 px-5 inset-shadow-sm shadow-lg bg-white">
                     <div className="card-icon">
                         <MegaphoneIcon className="size-10 text-green-800 mx-auto"/>
                     </div>
@@ -26,7 +26,7 @@ export default function Help(){
                         </div>
                     </div>
                 </div>
-                <div className="pt-5 pb-16 px-5 inset-shadow-sm shadow-lg">
+                <div className="pt-5 pb-16 px-5 inset-shadow-sm shadow-lg bg-white">
                     <div className="card-icon">
                         <PhoneIcon className="size-10 text-green-800 mx-auto"/>
                     </div>
@@ -43,7 +43,7 @@ export default function Help(){
                         </div>
                     </div>
                 </div>
-                <div className="pt-5 pb-16 px-5 inset-shadow-sm shadow-lg">
+                <div className="pt-5 pb-16 px-5 inset-shadow-sm shadow-lg bg-white">
                     <div className="card-icon">
                         <ChatBubbleBottomCenterTextIcon className="size-10 text-green-800 mx-auto"/>
                     </div>
@@ -58,7 +58,7 @@ export default function Help(){
                         </div>
                     </div>
                 </div>
-                <div className="pt-5 pb-16 px-5 inset-shadow-sm shadow-lg">
+                <div className="pt-5 pb-16 px-5 inset-shadow-sm shadow-lg bg-white">
                     <div className="card-icon">
                         <LightBulbIcon className="size-10 text-green-800 mx-auto"/>
                     </div>
@@ -73,7 +73,7 @@ export default function Help(){
                         </div>
                     </div>
                 </div>
-                <div className="pt-5 pb-16 px-5 inset-shadow-sm shadow-lg">
+                <div className="pt-5 pb-16 px-5 inset-shadow-sm shadow-lg bg-white">
                     <div className="card-icon">
                         <PuzzlePieceIcon className="size-10 text-green-800 mx-auto"/>
                     </div>
@@ -88,7 +88,7 @@ export default function Help(){
                         </div>
                     </div>
                 </div>
-                <div className="pt-5 pb-16 px-5 inset-shadow-sm shadow-lg">
+                <div className="pt-5 pb-16 px-5 inset-shadow-sm shadow-lg bg-white">
                     <div className="card-icon">
                         <HandThumbUpIcon className="size-10 text-green-800 mx-auto"/>
                     </div>
