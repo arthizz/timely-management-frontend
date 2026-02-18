@@ -1,4 +1,22 @@
+"use client";
+import { useRef, useState } from "react";
+import { PhotoIcon } from "@heroicons/react/24/outline";
+
 export default function RegisterStepTwo(){
+
+    const fileInput = useRef(null);
+
+    const handleUploadClick = () => {
+
+        fileInput.current.click();
+
+    }
+
+    const handleUploadChange = () => {
+
+        console.log("upload")
+
+    }
 
     return(
         <>
@@ -40,11 +58,19 @@ export default function RegisterStepTwo(){
             <div className="mb-3">
                 <label htmlFor="companylogo" className="text-blue-900 text-sm">Company Logo</label>
                 <div>
+                    <div onClick={handleUploadClick} className="py-15 w-full bg-gray-200 border-1 border-gray-300 rounded-xl flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:outline-gray-200 cursor-pointer">
+                        <div>
+                            <PhotoIcon className="h-8 w-auto mx-auto"/>
+                            <p className="text-sm font-bold">Upload Company Logo</p>
+                        </div>
+                    </div>
                     <input 
                         type="file" 
+                        ref={fileInput}
+                        onChange={handleUploadChange}
                         name="companylogo"
                         placeholder="Company Logo"
-                        className="bg-gray-200 w-full rounded-md px-2 py-1 outline-blue-300 border-2 border-blue-300 focus:outline-2" 
+                        className="bg-gray-200 w-full  hidden rounded-md px-2 py-1 outline-blue-300 border-2 border-blue-300 focus:outline-2" 
                     />
                 </div>
             </div>

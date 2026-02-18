@@ -67,7 +67,7 @@ export default function SignUp(){
                     <h5 className="text-blue-900 text-center text-3xl font-bold mb-5">Account Registration</h5>
                     <div className="flex gap-4 justify-content-center w-full mb-5">
                         <hr className="border-2 border-pink-400 w-full"/>
-                        <hr className="border-2 border-gray-400 w-full"/>
+                        <hr className={`border-2 ${currentStep === 2 ? 'border-pink-400' : 'border-gray-400'} w-full`}/>
                     </div>
                     <div className="login-form-body">
                         <form>
