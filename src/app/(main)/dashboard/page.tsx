@@ -2,6 +2,7 @@
 import { PlayIcon, PauseIcon } from "@heroicons/react/24/solid";
 import { useState, useRef, useEffect } from "react";
 import { useTimer } from "@/hooks/timerHooks";
+import EmployeeCalendar from "@/components/dashboard/fullcalendar";
 
 export default function Dashboard(){
 
@@ -9,6 +10,7 @@ export default function Dashboard(){
 
     return(
 
+        <>
         <div className="bg-gradient-to-r from-blue-500 via-blue-800 via-blue-900 to-blue-950 w-full px-16 py-16">
             <div className="timer-container">
                 <div className="flex items-center justify-center mb-5">
@@ -35,7 +37,28 @@ export default function Dashboard(){
                 </div>
             </div>
         </div>
+        
+        {/* Full Calendar */}
+        <div className="mx-auto px-32 py-16">
+            <h2 className="text-blue-900 text-3xl font-bold text-center mb-10">Employee Calendar & Records</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+                <div className="px-16 py-10 bg-pink-800/40 text-white rounded-xl">
+                    <h3 className="text-white text-2xl font-bold">Daily Record</h3>
+                    <h3 className="text-blue-900 text-xl font-bold">7hrs</h3>
+                </div>
+                <div className="px-16 py-10 bg-gray-900/40 text-white rounded-xl">
+                    <h3 className="text-white text-2xl font-bold">Weekly Record</h3>
+                    <h3 className="text-blue-900 text-xl font-bold">7hrs</h3>
+                </div>
+                <div className="px-16 py-10 bg-blue-900/40 text-white rounded-xl">
+                    <h3 className="text-white text-2xl font-bold">Monthly Record</h3>
+                    <h3 className="text-blue-900 text-xl font-bold">7hrs</h3>
+                </div>
+            </div>
+            <EmployeeCalendar status={true} timeIn={new Date()} timeOut={new Date()}/>
+        </div>
 
+        </>
     );
 
 }

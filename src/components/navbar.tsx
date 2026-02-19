@@ -6,7 +6,15 @@ import { LargeNumberLike } from "crypto";
 import AuthItem from "./landingpage/authItem";
 import LoginItem from "./landingpage/loginItem";
 
-const navigation = [
+type navigationItem = {
+
+    name: string;
+    href: string;
+    current: boolean;
+
+}
+
+const navigation: navigationItem[] = [
   { name: 'Dashboard', href: '#', current: true },
   { name: 'Team', href: '#', current: false },
   { name: 'Projects', href: '#', current: false },
