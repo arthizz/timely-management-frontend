@@ -1,6 +1,7 @@
 "use client";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import interActionPlugin from "@fullcalendar/interaction";
 import { useState } from "react";
 
 type TimeRecord = {
@@ -32,10 +33,17 @@ export default function EmployeeCalendar({status, timeIn, timeOut}: TimeRecord){
 
     }
 
+    const dateClickInterAction = (args: any) => {
+
+        console.log(args);
+
+    }
+
     return (
 
         <FullCalendar
-            plugins={[dayGridPlugin]}
+            plugins={[dayGridPlugin, interActionPlugin]}
+            dateClick={dateClickInterAction}
             initialView="dayGridMonth"
             eventContent={renderEventComponents}
             events={[{
