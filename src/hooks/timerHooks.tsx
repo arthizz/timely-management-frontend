@@ -5,6 +5,13 @@ import { fetchTime, setUserTimeIn, updateUserTimer } from "@/lib/timer";
 
 export function useTimer(){
 
+    type RecordData = {
+    
+        title: string;
+        start: string | null; 
+    
+    }
+
     type TimeData = {
 
         user_id: number;
@@ -15,6 +22,27 @@ export function useTimer(){
 
     const [totalTime, setTotalTime] = useState<number>(0);
     const [isTimeIn, setIsTimeIn] = useState<boolean>(false);
+    const [userRecordData, setUserRecordData] = useState<RecordData[]>(
+        Array.from({length: 4 }, (_, index) => {
+            const date = new Date();
+            date.setDate(date.getDate() + index);
+            
+            const options: Intl.DateTimeFormatOptions = {
+                weekday: 'short',
+                year: 'numeric',      // 2026
+                month: 'short',       // Feb
+                day: 'numeric',       // 21
+                hour: 'numeric',      // 11
+                minute: '2-digit',    // 30
+                hour12: true          // am/pm
+            };
+    
+            return{
+                title: date.toLocaleDateString('en-US', options),
+                start: date.toISOString(),
+            };
+        })
+    )
 
     useEffect(() => {
 
@@ -70,6 +98,6 @@ export function useTimer(){
 
     }
 
-    return { totalTime, isTimeIn, startTimer, stopTimer, formatTime }
+    return { totalTime, isTimeIn, startTimer, stopTimer, formatTime, userRecordData }
 
 }

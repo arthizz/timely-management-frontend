@@ -6,28 +6,32 @@ import { useState } from "react";
 
 type TimeRecord = {
 
-    status: boolean;
-    timeIn: Date;
-    timeOut: Date;
+    user_id: number;
+    time_in: string;
+    time_out: string | null;
 
 }
 
-export default function EmployeeCalendar({status, timeIn, timeOut}: TimeRecord){
+type RecordData = {
 
-    const timeInData = timeIn.toLocaleDateString('en-US', {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-    });
+    user_id: number;
+    title: string;
+    start: string;
+
+}
 
 
+
+export default function EmployeeCalendar({user_record}: any){
+
+    console.log(user_record)
 
     const renderEventComponents = (eventInfo: any) => {
 
         return (
             <div className="bg-blue-900 py-2 px-2 w-full rounded-xl">
                 <small className="text-white font-bold">{eventInfo.event.title}</small><br/>
-                <small className="text-pink-400 font-bold">Status: {status ? "In" : "Out"}</small>
+                {/* <small className="text-pink-400 font-bold">Status: {status ? "In" : "Out"}</small> */}
             </div>
         );
 
@@ -46,10 +50,7 @@ export default function EmployeeCalendar({status, timeIn, timeOut}: TimeRecord){
             dateClick={dateClickInterAction}
             initialView="dayGridMonth"
             eventContent={renderEventComponents}
-            events={[{
-                title: `${timeInData}`,
-                date: timeIn
-            }]}
+            events={user_record}
         />
 
     )

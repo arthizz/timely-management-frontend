@@ -1,8 +1,8 @@
 type TimeData = {
 
     user_id: number;
-    totalTime: number;
-    reason: string
+    totalTime: string;
+    reason: string | null;
 
 }
 

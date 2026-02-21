@@ -6,7 +6,7 @@ import EmployeeCalendar from "@/components/dashboard/fullcalendar";
 
 export default function Dashboard(){
 
-    const {totalTime, isTimeIn, startTimer, formatTime, stopTimer} = useTimer();
+    const {totalTime, isTimeIn, startTimer, formatTime, stopTimer, userRecordData} = useTimer();
 
     return(
 
@@ -55,7 +55,7 @@ export default function Dashboard(){
                     <h3 className="text-blue-900 text-xl font-bold">7hrs</h3>
                 </div>
             </div>
-            <EmployeeCalendar status={true} timeIn={new Date()} timeOut={new Date()}/>
+            <EmployeeCalendar user_record={userRecordData}/>
         </div>
 
         </>
