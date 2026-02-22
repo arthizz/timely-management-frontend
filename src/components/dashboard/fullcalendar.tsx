@@ -24,8 +24,6 @@ type RecordData = {
 
 export default function EmployeeCalendar({user_record}: any){
 
-    console.log(user_record)
-
     const renderEventComponents = (eventInfo: any) => {
 
         return (
