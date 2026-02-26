@@ -1,4 +1,5 @@
 import { ClockIcon, RocketLaunchIcon, CurrencyDollarIcon, GiftIcon, WrenchIcon, WifiIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 export default function HeroSection(){
 
@@ -17,16 +18,18 @@ export default function HeroSection(){
                         <small className="text-gray-200">Facebook Premier Level Partner</small>
                     </div>
                     <div className="flex items-center mt-5">
-                        <button className="
-                            px-10 
-                            bg-pink-400 
-                            rounded-3xl 
-                            py-3 
-                            text-white 
-                            font-bold 
-                            cursor-pointer
-                            hover:bg-pink-300
-                            hover:outline-2">Get Started</button>
+                        <Link href={"/login"}>
+                            <button className="
+                                px-10 
+                                bg-pink-400 
+                                rounded-3xl 
+                                py-3 
+                                text-white 
+                                font-bold 
+                                cursor-pointer
+                                hover:bg-pink-300
+                                hover:outline-2">Get Started</button>
+                        </Link>
                     </div>
                 </div>
                 <div className="">

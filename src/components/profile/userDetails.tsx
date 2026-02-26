@@ -4,7 +4,7 @@ export default function UserDetails(){
 
     return(
 
-        <div id="user-details" className="bg-white rounded-3xl shadow-lg p-6 md:col-span-1">
+        <div id="user-details" className="bg-white rounded-3xl shadow-lg p-6 md:col-span-1 max-h-fit">
             <div className="flex flex-col items-center text-center">
                 <img src="/images/john-doe.jpg" alt="" className="w-75 h-75 rounded-2xl object-cover mb-4"/>
                 <h2 className="text-lg font-semibold text-blue-900 my-3">My Profile</h2>
