@@ -1,7 +1,11 @@
-
+"use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import LoginForm from "@/components/auth/login/login";
 export default function Login(){
+
+    const [userName, setUserName] = useState("");
+    const [password, setPassword] = useState("");
 
     return (
 
@@ -19,7 +23,7 @@ export default function Login(){
                 <div className="login-form-title">
                     <h5 className="text-blue-900 text-center text-3xl font-bold mb-5">Login To Your Account</h5>
                     <div className="login-form-body px-10">
-                        <LoginForm />
+                        <LoginForm username={userName} password={password} />
                     </div>
                 </div>
             </div>

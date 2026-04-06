@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { LargeNumberLike } from "crypto";
+import Link from "next/link";
 import AuthItem from "./landingpage/authItem";
 import LoginItem from "./landingpage/loginItem";
 
@@ -14,13 +15,6 @@ type navigationItem = {
 
 }
 
-const navigation: navigationItem[] = [
-  { name: 'Dashboard', href: '/', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
-]
-
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
 }
@@ -28,6 +22,20 @@ function classNames(...classes: any) {
 export default function NavBar(){
 
     const [isAuthenticate, setIsAuthenticate] = useState<boolean>(false);
+    const [navs, setNavs] = useState<navigationItem[]>([
+        {name: 'Dashboard', href: '/dashboard', current: false},
+        {name: 'Team', href: '#', current: false},
+        {name: 'Projects', href: '#', current: false},
+        {name: 'Calendar', href: '#', current: false}
+    ]);
+
+    const setNavActive = (navIndex?: number) => {
+        console.log(navIndex);
+        let newNavs = navs.map((navItem, index) => ({...navItem, current: index === navIndex}));
+
+        setNavs(newNavs);
+
+    }
 
     return (
 
@@ -46,27 +54,30 @@ export default function NavBar(){
                         </DisclosureButton>
                     </div>
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                        <div className="flex shrink-0 items-center">
-                            <img
-                                alt="Your Company"
-                                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=fuchsia&shade=300"
-                                className="h-8 w-auto"
-                            />
+                        <div className="flex shrink-0 items-center cursor-pointer">
+                            <Link href="/" onClick={() => setNavActive(undefined)}>
+                                 <img
+                                    alt="Your Company"
+                                    src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=fuchsia&shade=300"
+                                    className="h-8 w-auto"
+                                />
+                            </Link>
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
-                                {navigation.map((item) => (
-                                <a
+                                {navs.map((item, index) => (
+                                <Link
                                     key={item.name}
                                     href={item.href}
                                     aria-current={item.current ? 'page' : undefined}
+                                    onClick={() => setNavActive(index)}
                                     className={classNames(
                                     item.current ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
                                     'rounded-md px-3 py-2 text-sm font-medium',
                                     )}
                                 >
                                     {item.name}
-                                </a>
+                                </Link>
                                 ))}
                             </div>
                         </div>
@@ -79,7 +90,7 @@ export default function NavBar(){
 
             <DisclosurePanel className="sm:hidden">
                 <div className="space-y-1 px-2 pt-2 pb-3">
-                {navigation.map((item) => (
+                {navs.map((item) => (
                     <DisclosureButton
                         key={item.name}
                         as="a"

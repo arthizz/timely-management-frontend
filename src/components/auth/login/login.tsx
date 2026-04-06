@@ -1,7 +1,14 @@
 
 import Link from "next/link";
 
-export default function LoginForm(username: string, password: string){
+interface LoginCreds {
+
+    username: string;
+    password: string;
+
+}
+
+export default function LoginForm ({username, password}:LoginCreds){
 
     return(
 
