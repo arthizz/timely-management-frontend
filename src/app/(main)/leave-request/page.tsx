@@ -22,6 +22,7 @@ export default function LeaveRequest(){
                         </div>
                         <h2 className="text-blue-900 text-center text-lg my-3 font">Leave Purpose</h2>
                         <LeavePurpose />
+                        <button className="bg-blue-900 w-[100%] py-5 rounded-3xl mt-3 cursor-pointer text-gray-100">Submit Request</button>
                     </div>
                 </div>
             </form>

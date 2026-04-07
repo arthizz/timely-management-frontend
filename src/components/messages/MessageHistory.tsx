@@ -23,7 +23,7 @@ export default function MessageHistory({isActive, messages, viewMessage}: Messag
                 {messages.map((message, index) => {
                     return (
                     <div className="w-full" key={message.id} onClick={() => viewMessage(index)}>
-                        <div className={`flex items-center gap-4 px-3 py-3 hover:bg-gray-800 hover:text-gray-100 hover:cursor-pointer ${index == isActive.index ? "bg-gray-800 text-gray-100" : ""}`}>
+                        <div className={`flex items-center gap-4 px-3 py-3 hover:bg-gray-800 hover:text-gray-100 hover:cursor-pointer ${index == isActive.index && isActive.isActive ? "bg-gray-800 text-gray-100" : ""}`}>
                             <div className="image-container">
                                 <img src={"./images/" + message.image} alt="john doe"  className="h-15 w-auto rounded-4xl"/>
                             </div>

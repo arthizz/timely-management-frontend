@@ -21,8 +21,8 @@ function classNames(...classes: any) {
 
 export default function NavBar(){
 
-    const [isAuthenticate, setIsAuthenticate] = useState<boolean>(false);
-    const [navs, setNavs] = useState<navigationItem[]>([
+    const [isAuthenticate, setIsAuthenticate] = useState(true);
+    const [navs, setNavs] = useState([
         {name: 'Dashboard', href: '/dashboard', current: false},
         {name: 'Team', href: '#', current: false},
         {name: 'Projects', href: '#', current: false},

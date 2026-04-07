@@ -1,7 +1,16 @@
+"use client";
 import { ClockIcon, RocketLaunchIcon, CurrencyDollarIcon, GiftIcon, WrenchIcon, WifiIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function HeroSection(){
+
+    const [avatars, setAvatars] = useState([
+        "https://i.pravatar.cc/100?u=1",
+        "https://i.pravatar.cc/100?u=2",
+        "https://i.pravatar.cc/100?u=3",
+        "https://i.pravatar.cc/100?u=4",
+    ])
 
     return (
         <div className="bg-gradient-to-r from-blue-500 via-blue-800 via-blue-900 to-blue-950 w-full px-16 py-16">
@@ -31,6 +40,28 @@ export default function HeroSection(){
                                 hover:outline-2">Get Started</button>
                         </Link>
                     </div>
+                    <div className="flex items-center gap-4 mt-5">
+                        <div className="flex -space-x-3">
+                            {avatars.map((url, index) => (
+                                <img key={index} src={url} alt="user" className="h-12 w-12 rounded-full border-blue-900 border-3 object-cover" />
+                            ))}
+                            <div className="flex h-12 w-12 items-center justify-center rounded-full border-3 border-blue-900 bg-blue-900 text-xs font-bold text-white">
+                                +82
+                            </div>
+                        </div>
+                        <div className="h-8 w-[1px] bg-gray-300"></div>
+                        <div className="flex items-center gap-3">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-900 border border-blue-900">
+                                <div className="text-orange-500 text-xl">★</div>
+                            </div>
+                            <div>
+                                <p className="text-sm font-bold text-gray-200 leading-tight">4.9/5 Ratings</p>
+                                <p className="text-xs text-gray-200">Trust by 100+</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+
                 </div>
                 <div className="">
                     <img src="/images/rocket-web-clock.png" alt="rocket" className="h-100 w-auto" />

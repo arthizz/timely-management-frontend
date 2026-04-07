@@ -69,7 +69,6 @@ export default function Messages() {
 
                         <div className="relative self-center">
                             <button
-                                // onClick={() => setIsDropdownOpen(prev => !prev)}
                                 onClick={() => setActiveDropdown(prev => prev == index ? null : index)}
                                 className="inline-flex items-center text-body hover:text-heading bg-neutral-primary box-border border border-transparent hover:bg-neutral-tertiary rounded-base p-1.5 cursor-pointer"
                                 type="button"
