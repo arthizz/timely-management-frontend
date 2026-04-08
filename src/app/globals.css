@@ -18,6 +18,61 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@theme {
+  /* Define the custom animation utility name */
+  --animate-fade-in: fade-in 1s ease-out forwards;
+  --animate-fade-in-left: fade-in-left 1s ease-out forwards;
+  --animate-fade-in-right: fade-in-right 1s ease-out forwards;
+  --animate-fade-in-bottom: fade-in-bottom 1s ease-out forwards;
+
+  /* Define the keyframes */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-40px); /* Start 20px to the left */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);    /* End at natural position */
+    }
+  }
+  
+  @keyframes fade-in-right{
+
+    0%{
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    100%{
+      opacity: 1;
+      transform: translatex(0);
+    }
+
+  }
+
+  @keyframes fade-in-bottom{
+
+    0%{
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100%{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   /* :root {
     --background: #0a0a0a;

@@ -24,7 +24,7 @@ export default function NavBar(){
     const [isAuthenticate, setIsAuthenticate] = useState(true);
     const [navs, setNavs] = useState([
         {name: 'Dashboard', href: '/dashboard', current: false},
-        {name: 'Team', href: '#', current: false},
+        {name: 'Team', href: '/our-team', current: false},
         {name: 'Projects', href: '#', current: false},
         {name: 'Calendar', href: '#', current: false}
     ]);

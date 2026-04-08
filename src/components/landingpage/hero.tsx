@@ -15,7 +15,7 @@ export default function HeroSection(){
     return (
         <div className="bg-gradient-to-r from-blue-500 via-blue-800 via-blue-900 to-blue-950 w-full px-16 py-16">
             <div className="grid grid-cols-1 sm:grid-cols-3">
-                <div className="mx-auto col-span-2 py-12">
+                <div className="mx-auto col-span-2 py-12 animate-fade-in-left">
                     <div className="flex items-center">
                         <h1 className="text-gray-200 text-5xl font-bold">
                             Unlock Your Business <br/>
@@ -63,11 +63,11 @@ export default function HeroSection(){
                     
 
                 </div>
-                <div className="">
+                <div className="animate-fade-in-right">
                     <img src="/images/rocket-web-clock.png" alt="rocket" className="h-100 w-auto" />
                 </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-6 mt-10 px-16">
+            <div className="grid grid-cols-1 sm:grid-cols-6 mt-10 px-16 animate-fade-in-bottom">
                 <div className="mx-auto text-gray-200 text-center">
                     <ClockIcon className="size-10 text-gray-200 mx-auto"></ClockIcon>
                     <p className="mt-5">Clock-In/Out</p>
