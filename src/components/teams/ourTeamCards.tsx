@@ -1,15 +1,8 @@
 "use client"
 
-interface ourTeamTypes {
+import { OurTeamTypes } from "@/types/ourTeamTypes";
 
-    employeeName: string;
-    jobTitle: string;
-    jobDescription: string;
-    profilePhoto: string;
-
-}
-
-export default function OurTeamCards({employeeName, jobTitle, jobDescription, profilePhoto}: ourTeamTypes){
+export default function OurTeamCards({employeeName, jobTitle, jobDescription, profilePhoto}: OurTeamTypes){
 
     return (
 
