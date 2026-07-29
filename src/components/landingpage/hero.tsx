@@ -28,16 +28,7 @@ export default function HeroSection(){
                     </div>
                     <div className="flex items-center mt-5">
                         <Link href={"/login"}>
-                            <button className="
-                                px-10 
-                                bg-pink-400 
-                                rounded-3xl 
-                                py-3 
-                                text-white 
-                                font-bold 
-                                cursor-pointer
-                                hover:bg-pink-300
-                                hover:outline-2">Get Started</button>
+                            <button className="px-10 bg-pink-400 rounded-3xl py-3 text-white font-bold cursor-pointer hover:bg-pink-300 hover:outline-2">Get Started</button>
                         </Link>
                     </div>
                     <div className="flex items-center gap-4 mt-5">
